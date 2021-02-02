@@ -1,0 +1,25 @@
+// ==========================================================================
+// Container
+// ==========================================================================
+
+.wrap {
+  padding: $gutters;
+  height: 65em;
+  position: relative;
+
+  @media #{$break--m} {
+    height: 100vh;
+  }
+
+  @include flexy();
+
+  @media #{$break--s} {
+    justify-content: center;
+  }
+
+  @media #{$break--l} {
+    width: 95%;
+    margin: 0 auto;
+    max-width: 1140px;
+  }
+}

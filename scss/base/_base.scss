@@ -1,0 +1,52 @@
+// ==========================================================================
+// Base Styles
+// ==========================================================================
+
+* {
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: $font-family--primary;
+  font-weight: $font-weight--medium;
+  font-size: $base__font-size;
+  line-height: ($base__line/$base__font-size);
+  background: linear-gradient(to bottom, $gradientOne, $gradientTwo) no-repeat;
+  height: 100%;
+  background-attachment: fixed;
+}
+
+h1 {
+  margin: 0;
+}
+
+p {
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: $white;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+// Lists
+
+ul,
+li {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+// Button
+
+button {
+  outline: 0;
+  border: none;
+}

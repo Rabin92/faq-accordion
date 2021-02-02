@@ -1,0 +1,53 @@
+// ==========================================================================
+// Global Config
+// ==========================================================================
+
+// Font Stacks
+$font-url--primary: 'https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap';
+$font-family--primary: 'Kumbh Sans', sans-serif;
+
+// Font Weights
+
+$font-weight--medium: 400;
+$font-weight--bold: 700;
+
+// Descriptive Base Colors
+
+$mirage: #1d1e35;
+$jaffa: #f47c57;
+$mediumPurple: #af67e9;
+$royalBlue: #6565e7;
+$trout: #4a4b5e;
+$jumbo: #787887;
+$iron: #e7e7e9;
+$white: #fff;
+
+// Color Usage
+$gradientOne: $mediumPurple;
+$gradientTwo: $royalBlue;
+$primaryTextCol: $mirage;
+$secondaryTextCol: $jumbo;
+$hoverTextCol: $jaffa;
+$divider: $iron;
+
+// Text
+
+$base__font-size: 12px;
+$base__line: 24px;
+$text--center: center;
+
+// Path to Assets
+
+$path--rel: '../images';
+
+// Gutters
+$gutters: 1em;
+
+// Cursor
+$cursor: pointer;
+
+// Media queries
+
+$break--s: '(min-width: 500px)';
+$break--m: '(min-width: 769px)';
+$break--l: '(min-width: 1024px)';

@@ -1,0 +1,166 @@
+// ==========================================================================
+// Accordion
+// ==========================================================================
+
+.accordion {
+  background-color: $white;
+  border-radius: em(20px);
+  color: $primaryTextCol;
+  padding: 1em 2em 4em;
+  position: relative;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
+    rgba(0, 0, 0, 0.22) 0px 15px 12px;
+
+  @media #{$break--s} {
+    max-width: 480px;
+  }
+
+  @media #{$break--m} {
+    overflow: hidden;
+    padding: em(65px);
+  }
+
+  @media #{$break--m} {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: em(40px);
+    max-width: 850px;
+  }
+
+  @include e(img) {
+    @include flexy($j-content: center, $a-items: null);
+
+    position: absolute;
+    top: -108px;
+    left: -12px;
+    width: 100%;
+
+    @media #{$break--m} {
+      width: initial;
+      top: initial;
+      transform: translateX(-60px) translateY(20px);
+      z-index: 2;
+    }
+  }
+
+  @include e(pattern) {
+    @include flexy($j-content: center, $a-items: null);
+  }
+
+  @include e(pattern-mob) {
+    transform: translateX(10px) translateY(-18px);
+
+    @media #{$break--m} {
+      transform: translateX(-290px) translateY(140px);
+      position: absolute;
+      top: -366px;
+      z-index: 1;
+    }
+  }
+
+  @include e(desktop-img) {
+    @media #{$break--m} {
+      height: 350px;
+    }
+  }
+
+  @include e(title) {
+    text-transform: uppercase;
+    text-align: $text--center;
+    font-size: em(28px);
+    margin-bottom: em(10px);
+
+    @media #{$break--m} {
+      text-align: left;
+    }
+  }
+
+  @include e(input) {
+    display: none;
+
+    &:checked ~ .accordion__tab-content {
+      max-height: 100vh;
+      animation: fadeOut 0.5s ease-in-out forwards;
+    }
+
+    &:checked ~ .accordion__tab-title {
+      color: $primaryTextCol;
+      font-weight: $font-weight--bold;
+    }
+
+    &:checked ~ .accordion__tab-title::after {
+      transform: rotate(180deg);
+    }
+  }
+
+  @include e(tab-title) {
+    cursor: $cursor;
+    color: $trout;
+    font-size: em(13px);
+
+    &::after {
+      content: url('#{$path--rel}/icon-arrow-down.svg');
+      position: absolute;
+      right: 15px;
+      transition: all 0.4s;
+
+      @media #{$break--m} {
+        position: absolute;
+        right: 65px;
+      }
+    }
+
+    &:hover {
+      color: $hoverTextCol;
+    }
+  }
+
+  @include e(tab-content) {
+    overflow: hidden;
+    color: $secondaryTextCol;
+    max-height: 0;
+    transition: max-height 0.3s;
+    margin: em(8px) em(0px);
+    line-height: 18px;
+  }
+}
+
+.box {
+  display: none;
+
+  @media #{$break--m} {
+    display: block;
+    background: url('#{$path--rel}/illustration-box-desktop.svg') no-repeat;
+    background-size: contain;
+    width: 175px;
+    height: 127px;
+    position: absolute;
+    top: 52%;
+    right: 79%;
+    z-index: 4;
+  }
+
+  @media #{$break--l} {
+    background-size: cover;
+    top: 47.95%;
+    right: 82%;
+  }
+}
+
+hr {
+  border: 0;
+  height: 1px;
+  background: #333;
+  background-image: linear-gradient(to right, #333, $divider, #ccc);
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
